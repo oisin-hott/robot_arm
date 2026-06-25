@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="six_dof_arm">
+
+ <xacro:include filename="macro.xacro"/>
+ 
+
+  <xacro:property name="arm_one_length" value="0.22"/>
+  <xacro:property name="arm_one_width" value="0.074"/>
+  <xacro:property name="arm_one_height" value="0.07"/>
+
+  <xacro:property name="arm_two_length" value="0.1"/>
+  <xacro:property name="arm_two_radius" value="0.045"/>
+
+
+  <xacro:property name="upper_arm_length" value="0.130"/>
+  <xacro:property name="upper_arm_width" value="0.064"/>
+  <xacro:property name="upper_arm_height" value="0.064"/>
+
+  <xacro:property name ="hand_length" value = "0.05"/>
+  <xacro:property name ="hand_width" value = "0.064"/>
+  <xacro:property name ="hand_height" value = "0.064"/>
+
+<!-- Generation of Links -->
+<!--<xacro:dummy_link name = "world_link"/>-->
+<xacro:mesh_link name="base_link_mesh"
+  mesh_file="package://six_dof_arm/meshes/Base.STL"
+  origin_xyz="0.125 -0.059 0"
+  origin_rpy="1.5708 0 3.14159"
+  mass="0.728"
+  ixx="0.001839" ixy="0.000050" ixz="-0.000012"
+  iyy="0.003165" iyz="-0.000003"
+  izz="0.002933"/>
+
+<xacro:mesh_link name="turntable_link_mesh"
+  mesh_file="package://six_dof_arm/meshes/turn_table.STL"
+  origin_xyz="-0.059 0.059 0.074"
+  origin_rpy="3.14159 0 0"
+  mass="0.308"
+  ixx="0.000855" ixy="-0.000030" ixz="-0.000102"
+  iyy="0.000526" iyz="0.000063"
+  izz="0.000707"/>
+
+<xacro:mesh_link name="arm_one_link"
+  mesh_file="package://six_dof_arm/meshes/arm_1.STL"
+  origin_xyz="-0.0565 0.0365 -0.0565"
+  origin_rpy="1.5708 0 0"
+  mass="0.574"
+  ixx="0.004067" ixy="0.000282" ixz="-0.000005"
+  iyy="0.000844" iyz="-0.000216"
+  izz="0.004099"/>
+
+<xacro:mesh_link name="arm_two_link"
+  mesh_file="package://six_dof_arm/meshes/arm_2_base.STL"
+  origin_xyz="-0.045 -0.045 -0.036"
+  origin_rpy="1.5708 0 1.5708"
+  mass="1.083"
+  ixx="0.003968" ixy="0.000191" ixz="0.000031"
+  iyy="0.000951" iyz="0.000100"
+  izz="0.004016"/>
+
+<xacro:mesh_link name="upper_arm"
+  mesh_file="package://six_dof_arm/meshes/top_arm.STL"
+  origin_xyz="-0.066 -0.031 0.155"
+  origin_rpy="3.1416 0 1.24"
+  mass="0.331"
+  ixx="0.000499" ixy="0.000013" ixz="-0.000024"
+  iyy="0.000469" iyz="0.000013"
+  izz="0.000507"/>
+
+<xacro:mesh_link name="hand"
+  mesh_file="package://six_dof_arm/meshes/Bevel.STL"
+  origin_xyz="-0.036 0.032 -0.036"
+  origin_rpy="1.5708 0 0"
+  mass="0.095"
+  ixx="0.000049" ixy="-0.000004" ixz="-0.000032"
+  iyy="0.000084" iyz="0.000002"
+  izz="0.000056"/>
+
+<xacro:mesh_link name="wrist"
+  mesh_file="package://six_dof_arm/meshes/Gripper1.STL"
+  origin_xyz="-0.0437 -0.025 -0.025"
+  origin_rpy="0 0 0"
+  mass="0.116"
+  ixx="0.000143" ixy="0.000000" ixz="0.000002"
+  iyy="0.000107" iyz="-0.000016"
+  izz="0.000093"/>
+
+
+<xacro:mesh_link name="left_finger"
+  mesh_file="package://six_dof_arm/meshes/Finger.STL"
+  origin_xyz="-0.03 -0.015 0.07"
+  origin_rpy="1.5708 0 1.5708"
+  mass="0.056"
+  ixx="0.000049" ixy="-0.000004" ixz="-0.000032"
+  iyy="0.000084" iyz="0.000002"
+  izz="0.000056"/>
+
+<xacro:mesh_link name="right_finger"
+  mesh_file="package://six_dof_arm/meshes/Finger.STL"
+  origin_xyz="0.03 0.015 0.07"
+  origin_rpy="1.5708 0 -1.5708"
+  mass="0.056"
+  ixx="0.000049" ixy="-0.000004" ixz="-0.000032"
+  iyy="0.000084" iyz="0.000002"
+  izz="0.000056"/>
+
+
+</robot>

@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="six_dof_arm">
+
+  <!-- ================= INCLUDE BASE ================= -->
+  <!--<xacro:include filename="base.xacro"/>-->
+ <!--<xacro:include filename="turntable.xacro"/> -->
+  <xacro:include filename="macro.xacro"/>
+  <xacro:include filename="links.xacro"/>
+   <xacro:include filename="ros2_controls_xacro.xacro"/>
+
+
+  <xacro:r6bot_ros2_control name="six_dof_arm"/>
+  <!-- ================= PARAMETERS ================= -->
+  <xacro:property name="link_length" value="0.3"/>
+  <xacro:property name="link_radius" value="0.04"/>
+
+  <link name ="world"/>
+  <joint name="World_joint" type="fixed">
+      <parent link="world"/>
+      <child link="base_link_mesh"/>
+   </joint>
+
+  <xacro:arm_joint name="joint_1"
+                   parent="base_link_mesh"
+                   child="turntable_link_mesh"
+                   axis="0 0 1"
+                   xyz="0 0 0.162"/>
+
+  <xacro:arm_joint name="joint_2"
+                   parent="turntable_link_mesh"
+                   child="arm_one_link"
+                   axis="0 1 0"
+                   xyz="0 0 0.05"/>
+
+  <xacro:arm_joint name="joint_3"
+                   parent="arm_one_link"
+                   child="arm_two_link"
+                   axis="0 1 0"
+                   xyz="0 0 0.2"/>
+
+  <xacro:arm_joint name="joint_4"
+                   parent="arm_two_link"
+                   child="upper_arm"
+                   axis="0 0 1"
+                   xyz="0 0 0.157"/>
+  
+  <xacro:arm_joint name="joint_5"
+                   parent="upper_arm"
+                   child="hand"
+                   axis="0 1 0"
+                   xyz="0 0 ${upper_arm_length}"/>
+
+<xacro:arm_joint name="joint_6"
+                   parent="hand"
+                   child="wrist"
+                   axis="0 0 1"
+                   xyz="0 0 0"/>
+
+<joint name="left_finger_joint" type="prismatic">
+  <parent link="wrist"/>
+  <child link="left_finger"/>
+  <origin rpy="0 0 0" xyz="0 0 0"/>
+  <axis xyz="1 0 0"/>
+  <limit lower="0" upper="0.025" effort="10" velocity="0.1"/>
+</joint>
+
+<joint name="right_finger_joint" type="prismatic">
+  <parent link="wrist"/>
+  <child link="right_finger"/>
+  <origin rpy="0 0 0" xyz="0 0 0"/>
+  <axis xyz="1 0 0"/>
+  <mimic joint="left_finger_joint" multiplier="-1" offset="0"/>
+  <limit lower="-0.025" upper="0" effort="10" velocity="0.1"/>
+</joint>
+ 
+</robot>

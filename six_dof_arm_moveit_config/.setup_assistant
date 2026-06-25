@@ -1,0 +1,25 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: six_dof_arm
+    relative_path: urdf/arm.xacro
+  srdf:
+    relative_path: config/six_dof_arm.srdf
+  package_settings:
+    author_name: Oisin Hott
+    author_email: oisin.hott@gmail.com
+    generated_timestamp: 1781062273
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity

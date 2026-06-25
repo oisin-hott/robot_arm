@@ -1,0 +1,19 @@
+# Build artifacts (if any nested ones exist)
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Generated URDF from xacro
+six_dof_arm/urdf/arm.urdf
+
+# Editor / OS files
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<library path="six_dof_arm_hardware">
+  <class
+    name="six_dof_arm_hardware/SixDofArmHardware"
+    type="six_dof_arm_hardware::SixDofArmHardware"
+    base_class_type="hardware_interface::SystemInterface">
+    <description>
+      Six DOF arm hardware interface mock
+    </description>
+  </class>
+</library>
