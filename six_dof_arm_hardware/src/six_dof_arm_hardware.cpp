@@ -16,7 +16,7 @@ namespace six_dof_arm_hardware
         hw_commands_positions_.resize(info_.joints.size(), 0.0);
         hw_states_positions_.resize(info_.joints.size(), 0.0);
         hw_states_velocities_.resize(info_.joints.size(), 0.0);
-        teensy_connected = true;
+        teensy_connected = false; //used for testing: true will run using actual hardware. False uses virtual hardware
         return hardware_interface::CallbackReturn::SUCCESS;
     }
 
@@ -40,7 +40,7 @@ namespace six_dof_arm_hardware
             // Check for errors
             if (serial_port < 0) {
                 printf("Error %i from open: %s\n", errno, strerror(errno));
-                return 1;
+                return hardware_interface::CallbackReturn::ERROR;;
             }
 
             struct termios tty;

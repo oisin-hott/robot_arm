@@ -214,6 +214,15 @@ def generate_launch_description():
         )
     )
 
+        # -------------------------
+    # Joint State Publisher GUI
+    # -------------------------
+    joint_state_gui = Node(
+        package='joint_state_publisher_gui',
+        executable='joint_state_publisher_gui',
+        output='screen'
+    )
+
     # -------------------------
     # Launch description
     # -------------------------
@@ -227,5 +236,6 @@ def generate_launch_description():
         joint_state_broadcaster_spawner,
         spawn_jtc_after_jsb,
         spawn_gripper_after_jtc,
+       # joint_state_gui,
         start_arm_motion_after_gripper,
     ])

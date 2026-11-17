@@ -51,7 +51,7 @@
   izz="0.004099"/>
 
 <xacro:mesh_link name="arm_two_link"
-  mesh_file="package://six_dof_arm/meshes/arm_2_base.STL"
+  mesh_file="package://six_dof_arm/meshes/Arm2Base.STL"
   origin_xyz="-0.045 -0.045 -0.036"
   origin_rpy="1.5708 0 1.5708"
   mass="1.083"
@@ -60,9 +60,9 @@
   izz="0.004016"/>
 
 <xacro:mesh_link name="upper_arm"
-  mesh_file="package://six_dof_arm/meshes/top_arm.STL"
-  origin_xyz="-0.066 -0.031 0.155"
-  origin_rpy="3.1416 0 1.24"
+  mesh_file="package://six_dof_arm/meshes/TopArm.STL"
+  origin_xyz="-0.04 -0.04 -0.01"
+  origin_rpy="1.5708 0 1.5708"
   mass="0.331"
   ixx="0.000499" ixy="0.000013" ixz="-0.000024"
   iyy="0.000469" iyz="0.000013"
@@ -70,7 +70,7 @@
 
 <xacro:mesh_link name="hand"
   mesh_file="package://six_dof_arm/meshes/Bevel.STL"
-  origin_xyz="-0.036 0.032 -0.036"
+  origin_xyz="-0.036 0.032 -0.038"
   origin_rpy="1.5708 0 0"
   mass="0.095"
   ixx="0.000049" ixy="-0.000004" ixz="-0.000032"
@@ -79,7 +79,7 @@
 
 <xacro:mesh_link name="wrist"
   mesh_file="package://six_dof_arm/meshes/Gripper1.STL"
-  origin_xyz="-0.0437 -0.025 -0.025"
+  origin_xyz="-0.0437 -0.025 -0.027"
   origin_rpy="0 0 0"
   mass="0.116"
   ixx="0.000143" ixy="0.000000" ixz="0.000002"

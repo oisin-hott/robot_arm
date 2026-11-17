@@ -49,7 +49,7 @@
                    parent="upper_arm"
                    child="hand"
                    axis="0 1 0"
-                   xyz="0 0 ${upper_arm_length}"/>
+                   xyz="0 0 0.085"/>
 
 <xacro:arm_joint name="joint_6"
                    parent="hand"
