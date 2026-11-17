@@ -3,11 +3,12 @@
 <package format="3">
   <name>six_dof_arm_perception</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
+  <description>Example Publisher for Testing</description>
   <maintainer email="oisin.hott@gmail.com">orion</maintainer>
   <license>TODO: License declaration</license>
 
   <depend>rclpy</depend>
+  <depend>std_msgs</depend>
   <depend>sensor_msgs</depend>
   <depend>cv_bridge</depend>
   <depend>image_transport</depend>

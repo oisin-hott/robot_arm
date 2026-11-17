@@ -24,6 +24,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            'minimal_publisher = six_dof_arm_perception.minimal_publisher:main'
         ],
     },
 )
