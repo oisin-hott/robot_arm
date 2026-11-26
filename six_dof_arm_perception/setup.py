@@ -26,6 +26,8 @@ setup(
         'console_scripts': [
             'minimal_publisher = six_dof_arm_perception.minimal_publisher:main',
             'minimal_subscriber =six_dof_arm_perception.minimal_subscriber:main',
+            'img_publisher = six_dof_arm_perception.cam_pub:main',
+            'img_subscriber = six_dof_arm_perception.cam_sub:main',
         ],
     },
 )
